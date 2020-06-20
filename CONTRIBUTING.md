@@ -1,4 +1,4 @@
 Contributers: 
 - Qianli Wang
 - Nazar Sopiha
-- noch anderer(Privatsphäre)
+- Felix Manuel Peterka
