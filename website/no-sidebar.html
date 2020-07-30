@@ -30,24 +30,6 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Dropdown</a>
-								<ul>
-									<li><a href="#">Lorem ipsum dolor</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam dolore nisl</a></li>
-									<li>
-										<a href="#">And a submenu &hellip;</a>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Phasellus consequat</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam dolore nisl</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Veroeros feugiat</a></li>
-								</ul>
-							</li>
 							<li><a href="left-sidebar.html">Left Sidebar</a></li>
 							<li><a href="right-sidebar.html">Right Sidebar</a></li>
 							<li><a href="no-sidebar.html">No Sidebar</a></li>
@@ -76,6 +58,17 @@
 							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
 							natoque aenean scelerisque vel lacinia mollis quam sodales congue.
 						</p>
+
+						<section>
+							<header>
+								<h3> Graph
+							</header>
+							<div id="linechart"></div>
+								<canvas width="600" height="400" id="lineChart" style = "max-width : 600px; max-height: 400px"></canvas>
+            				</div>
+						</section>
+
+
 						<section>
 							<header>
 								<h3>Ultrices tempor sagittis nisl</h3>
@@ -156,11 +149,15 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/template.js"></script>
-			<!-- lib for parsing 
-				 <script src="assets/js/papaparse.min.js"></script>   -->
+				<!-- lib for parsing 
+					 <script src="assets/js/papaparse.min.js"></script>   
+				-->
+			<!-- MDB core JavaScript -->
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
