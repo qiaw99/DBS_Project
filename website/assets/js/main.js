@@ -21,6 +21,12 @@ function makeTableVisible() {
     clearBtn.style.visibility = 'visible';
 }
 
+function makeGraphsVisible() {
+    var graph = document.getElementById('newGraphs');
+    graph.style.display = 'inherit';
+
+}
+
 function insertRow(record, countryName) {
     var table = document.getElementById("tableBody");
     var row = table.insertRow(0);
@@ -140,7 +146,15 @@ $(document).ready(function () {
 				]
 			},
 			options: {
-				responsive: true
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true,
+                            precision: 0
+                        }
+                    }]
+                }
             }
 
 		});
@@ -211,6 +225,7 @@ $(document).ready(function () {
         });
         paintGraph(newDailyCases, newCaseGraph);
         paintGraph(newDailyDeath, newDeathGraph);
+        makeGraphsVisible();
     }
 
     function updateTable() {

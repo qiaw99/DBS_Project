@@ -27,7 +27,11 @@ input[type="button"],
         padding: 0.3em 3em;
     }
 
-#table {
+#newGraphs {
+    display: none;
+}
+
+#table{
     margin: 2em 0;
     visibility: hidden;
 }
