@@ -22,17 +22,16 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1><a href="index.html" id="logo">Helios</a></h1>
+							<h1><a href="#" id="logo">Aloha</a></h1>
 						</header>
 					</div>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="left-sidebar.html">Left Sidebar</a></li>
-							<li><a href="right-sidebar.html">Right Sidebar</a></li>
-							<li><a href="no-sidebar.html">No Sidebar</a></li>
+							<li><a href="#">Home</a></li>
+							<li><a href="#tableSection">Table</a></li>
+							<li><a href="#graphSection">Graph</a></li>
 						</ul>
 					</nav>
 
@@ -40,26 +39,47 @@
 
 		<!-- Main -->
 			<div class="wrapper style1">
-
 				<div class="container">
 					<article id="main" class="special">
 						<header>
-							<h2><a href="#">No Sidebar</a></h2>
+							<h2><a href="#">DBS Project</a></h2>
 							<p>
-								Morbi convallis lectus malesuada sed fermentum dolore amet
+								Felix, Nazar und Qianli
 							</p>
 						</header>
-						<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-						<p>
-							Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-							posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-							lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-							consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-							natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-						</p>
 
-						<section>
+						<section id="tableSection">
+							<header>
+								<h3> Data Table</h3>
+							</header>
+							<div>
+								<form id="queryForm">
+									<select id="country" name="country"> 
+										<option value="" disabled selected hidden>Pick a country</option>
+									</select>
+									<select id="day" name="day"> 
+										<option value="" disabled selected hidden>Pick a day</option>
+									</select>
+									<input type = "submit" value="Find">
+									<input id = "clearBtn" type="reset" value="Clear table" onclick="clearTable()">
+								</form>
+							</div>
+							<div id="table">
+								<table id="dataTable">
+									<tr>
+									  <th>Country name</td>
+									  <th>Date</td>
+									  <th>Cases</td>
+									  <th>Deaths</td>
+									</tr>
+									<tbody id = "tableBody">
+										
+									</tbody>
+								  </table>
+							</div>
+						</section>
+
+						<section id="graphSection">
 							<header>
 								<h3> Graph
 							</header>
@@ -70,36 +90,6 @@
 							<div>
 								
             				</div>
-						</section>
-
-
-						<section>
-							<header>
-								<h3>Ultrices tempor sagittis nisl</h3>
-							</header>
-							<p>
-								Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-								at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-								feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-								fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-								egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-							</p>
-							<p>
-								Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-								orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-								ut penatibus fermentum nibh erat malesuada varius.
-							</p>
-						</section>
-						<section>
-							<header>
-								<h3>Augue euismod feugiat tempus</h3>
-							</header>
-							<p>
-								Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-								feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-								ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-								egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-							</p>
 						</section>
 					</article>
 					<hr />
@@ -120,9 +110,9 @@
 							<!-- Contact -->
 								<section class="contact">
 									<header>
-										<h3>Nisl turpis nascetur interdum?</h3>
+										<h3>This is a footer</h3>
 									</header>
-									<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+									<p>We have tried our best to make the website functional, beautiful in a given time and to pass all the exams :D</p>
 									<ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -162,6 +152,11 @@
 				-->
 			<!-- MDB core JavaScript -->
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+			<!-- for zooming 
+			<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+			<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>  -->
+ 
 			<script src="assets/js/main.js"></script>
 
 	</body>
