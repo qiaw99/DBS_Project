@@ -78,11 +78,10 @@
 								  </table>
 							</div>
 						</section>
-
 						<section id="graphSection">
 							<header>
 								<h3> Graph
-							</header>
+							</header>							
 							<div>
 								<canvas width="600" height="400" id="cases" style = "max-width : 600px; max-height: 400px"></canvas>
 								<canvas width="600" height="400" id="death" style = "max-width : 600px; max-height: 400px"></canvas>
@@ -90,6 +89,24 @@
 							<div>
 								
             				</div>
+						</section>
+
+						<section id="pickDates">
+							<div> 
+								<form id="graphForm">
+									<select id="startDate" name="startDate"> 
+										<option value="" disabled selected hidden>Pick a start date</option>
+									</select>
+									<select id="endDate" name="endDate"> 
+										<option value="" disabled selected hidden>Pick an end date</option>
+									</select>
+									<input type = "submit" value="draw">
+								</form>
+							</div>
+						</section>
+						<section id="newGraphs">
+								<canvas width="600" height="400" id="intervalCases" style = "max-width : 600px; max-height: 400px"></canvas>
+								<canvas width="600" height="400" id="intervalDeath" style = "max-width : 600px; max-height: 400px"></canvas>
 						</section>
 					</article>
 					<hr />
