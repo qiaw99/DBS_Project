@@ -5,19 +5,10 @@
  * 
  */
 
-function makeCasesSorted (rowData) {
-    let result = {};
-    Object.keys(rowData).sort().forEach((key) => {
-        result[key] = rowData[key]
-    });
-    return result;
-}
-
-
 $(document).ready(function () {     
     
     let dailyCases = {};
-    let dailyDeathes = {};
+    let dailyDeath = {};
     $.ajax({
 		url: "/assets/data/record_export.csv",
 		dataType: "text",
@@ -28,38 +19,48 @@ $(document).ready(function () {
 
     function prepare_data(recordData) {
         let unsortedDailyCases = {};
-        let unsortedDailyDeathes = {};
+        let unsortedDailyDeath = {};
+        var caseGraph = 'cases';
+        var deathGraph = 'death';
         var line_data = recordData.split(/\r?\n/);
         /* begin with 1 to skip header */
         for (var count = 1; count < line_data.length; count++) {
-            var cell_data = line_data[count].split(",");
-            var day = cell_data[2];  // position of date in record_export.csv 
+            var cellData = line_data[count].split(",");
+            var day = cellData[2];  // position of date in record_export.csv 
             /* if it is in unsortedDailyCases it should be in death_cases   */
             if (day in unsortedDailyCases) {
-                dailyDeathes[day] += parseInt(cell_data[3]);   // position of daily deathes
-                unsortedDailyCases[day] += parseInt(cell_data[4]);     // position of daily cases. Sorry for magic numbers
+                unsortedDailyDeath[day] += parseInt(cellData[3]);   // position of daily death
+                unsortedDailyCases[day] += parseInt(cellData[4]);     // position of daily cases. Sorry for magic numbers
             }
             else {
-                dailyDeathes[day] = parseInt(cell_data[3]);   
-                unsortedDailyCases[day] = parseInt(cell_data[4]);
+                unsortedDailyDeath[day] = parseInt(cellData[3]);   
+                unsortedDailyCases[day] = parseInt(cellData[4]);
             }
 
         }
 
-        let dailyCases = makeCasesSorted(unsortedDailyCases);
-        paint_cases_graph(dailyCases);
+        /* sorting by data asc */
+        Object.keys(unsortedDailyCases).sort().forEach((key) => {
+            dailyCases[key] = unsortedDailyCases[key]
+        });
+        paintGraph(dailyCases, caseGraph);
+
+        Object.keys(unsortedDailyDeath).sort().forEach((key) => {
+            dailyDeath[key] = unsortedDailyDeath[key]
+        });
+        paintGraph(dailyDeath, deathGraph);
     }
 
-    function paint_cases_graph(dailyCases) {
+    function paintGraph(dailyCases, id) {
         date = Object.keys(dailyCases);
         values = Object.values(dailyCases);
-		var ctxL = document.getElementById("lineChart").getContext('2d');
+		var ctxL = document.getElementById(id).getContext('2d');
 		var myLineChart = new Chart(ctxL, {
 			type: 'line',
 			data: {
 				labels: date,
 				datasets: [{
-						label: "Deep",
+						label: id,
 						data: values,
 						backgroundColor: [
 							'rgba(0, 0, 0, 0)',
@@ -76,6 +77,6 @@ $(document).ready(function () {
 			}
 
 		});
-	}
+    }
 });
 
